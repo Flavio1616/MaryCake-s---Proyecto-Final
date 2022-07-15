@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block title %}TORTAS{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/torta-pg.jpg' %}{% endblock %}
+
+{% block headers %} 
+    <h1>TORTAS</h1>
+    <span class="subheading">AQUI NUESTRO CATALOGO DE TORTAS</span>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Proyecto -->
+    <div class="row project">  	
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{% static 'core/img/torta-pg.jpg' %}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading title">Segundo proyecto</h2>   
+        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm....</p>
+    </div>
+    </div>
+    <!-- Proyecto -->
+    <div class="row project">  	
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{% static 'core/img/home-pg.jpg' %}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading title">Primer proyecto</h2>   
+        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm....</p>
+    </div>
+    </div>
+    </div>
+{% endblock %}
+

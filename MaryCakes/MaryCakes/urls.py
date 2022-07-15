@@ -16,19 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views as core_views
-from torta import views as torta_views
-
-from django.conf import settings
+from user.views import *
+from user.forms import *
+from django.contrib.auth import  views as auth_views
 
 urlpatterns = [
     path('', core_views.home, name="home"),
-    path('torta/', torta_views.torta, name="torta"),
+    path('torta/', core_views.torta, name="torta"),
     path('postre/', core_views.postre, name="postre"),
     path('about/', core_views.about, name="about"),
     path('contact/', core_views.contact, name="contact"),
+    path('register/', register, name="register"),
+    path('login/', CustomLoginView.as_view(template_name = 'user/login.html',authentication_form=loginForm) , name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='user/logout.html'), name='logout'),
     path('admin/', admin.site.urls),
 ]
-
-if settings.DEBUG:
-    from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
