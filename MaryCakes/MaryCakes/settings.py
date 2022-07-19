@@ -79,12 +79,8 @@ WSGI_APPLICATION = 'MaryCakes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'webpastel',
-        'USER': 'postgres',
-        'PASSWORD': '110722',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
 
@@ -129,5 +125,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-LOGIN_REDIRECT_URL = 'home'
