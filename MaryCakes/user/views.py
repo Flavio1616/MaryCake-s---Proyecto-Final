@@ -5,16 +5,32 @@ from django.contrib import messages
 from django.views import View
 from django.contrib.auth.views import LoginView
 # Create your views here.
-def register(request):
-    if request.method =='POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            return redirect('home')
-    else:
-        form = UserRegisterForm()
-    return render(request, "user/register.html",{'formulario': form})
+
+class register(View):
+  form_class = UserRegisterForm
+  initial = {'key': 'value'}
+  template_name = 'user/register.html'
+
+  def get(self, request, *args, **kwargs):
+    form = self.form_class(initial=self.initial)
+    return render(request, self.template_name, {'form': form})
+
+  def post(self, request, *args, **kwargs): 
+    form = self.form_class(request.POST)
+    if form.is_valid():
+        form.save()
+        username = form.cleaned_data.get('username')
+        messages.success(request, f'Account created for {username}')
+        return redirect(to='/')
+    return render(request, self.template_name, {'form': form})
+  def dispatch(self, request, *args, **kwargs):
+    # will redirect to the home page if a user tries to access the register page while logged in
+    if request.user.is_authenticated:
+        return redirect(to='/')
+    # else process dispatch as it otherwise normally would
+    return super(register, self).dispatch(request, *args, **kwargs)
+
+
 
 class CustomLoginView(LoginView):
     form_class = loginForm

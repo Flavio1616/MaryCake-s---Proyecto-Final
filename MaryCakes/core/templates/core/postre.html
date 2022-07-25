@@ -2,7 +2,7 @@
 
 {% block title %}POSTRES Y BOCADITOS{% endblock %}
 
-{% block background %}{% load static %}{% static 'core/img/postre-pg.jpg' %}{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/postre.jpg' %}{% endblock %}
 
 {% block headers %} 
     <h1>POSTRES Y BOCADITOS</h1>
@@ -10,28 +10,41 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <!-- Proyecto -->
-    <div class="row project">  	
-    <div class="col-lg-3 col-md-4 offset-lg-1">
-            <img class="img-fluid" src="{% static 'core/img/postre-pg.jpg' %}" alt="">
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/css/catalogo.css' %}">
+<div class="contenedor">
+
+    <div class="catalogo">
+        <img src="{% static 'core/img/postre1.jpg' %}" alt="Torta">
+        <h2>Postre de Chocolate Cubierta de Manjar</h2>
+        <p>Esta receta es ideal para principiantes,
+         además de que se puede decorar o modificar al gusto con distintos sabores.
+         La torta clásica es una torta casera y fácil de preparar, ideal para servir sola,
+         como postre o merienda.</p>
+         <a href="#">Añadir al Carrito</a>
     </div>
-    <div class="col-lg-7 col-md-8">
-        <h2 class="section-heading title">Segundo proyecto</h2>   
-        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm....</p>
+
+    <div class="catalogo">
+        <img src="{% static 'core/img/postre2.jpg' %}" alt="Torta">
+        <h2>Postre con Galletas de Oreos</h2>
+        <p>Esta receta es ideal para principiantes,
+         además de que se puede decorar o modificar al gusto con distintos sabores.
+         La torta clásica es una torta casera y fácil de preparar, ideal para servir sola,
+         como postre o merienda.</p>
+         <a href="#">Añadir al Carrito</a>
     </div>
+
+    <div class="catalogo">
+        <img src="{% static 'core/img/bocadillo1.jpg' %}" alt="Torta">
+        <h2>Bocadillos de Galletas con Frutas</h2>
+        <p>Esta receta es ideal para principiantes,
+         además de que se puede decorar o modificar al gusto con distintos sabores.
+         La torta clásica es una torta casera y fácil de preparar, ideal para servir sola,
+         como postre o merienda.</p>
+         <a href="#">Añadir al Carrito</a>
     </div>
-    <!-- Proyecto -->
-    <div class="row project">  	
-    <div class="col-lg-3 col-md-4 offset-lg-1">
-            <img class="img-fluid" src="{% static 'core/img/home-pg.jpg' %}" alt="">
-    </div>
-    <div class="col-lg-7 col-md-8">
-        <h2 class="section-heading title">Primer proyecto</h2>   
-        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm....</p>
-    </div>
-    </div>
-    </div>
+
+</div>
 {% endblock %}
 
 

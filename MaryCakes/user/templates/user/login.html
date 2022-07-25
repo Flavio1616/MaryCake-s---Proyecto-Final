@@ -12,10 +12,24 @@
     {% load static %}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
 	<link rel="stylesheet" href="{% static 'user/css/estilos_login.css' %}">
+    
 {% endblock %}
 
 {% block content %}
-    <form class="formulario">
+    <form class="formulario" method="POST">
+    {% csrf_token %}
+    {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+              <div id="form_errors">
+                {% for key, value in form.errors.items %}
+                  <strong>{{ value }}</strong>
+                {% endfor %}
+              </div>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close" >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+    {% endif %}
     
     <h1>Login</h1>
      <div class="contenedor">
@@ -33,6 +47,10 @@
         {{form.password}}
          
          </div>
+        <div class="block center">
+            <label for="remember_me">Remember me</label>
+            {{ form.remember_me }}
+        </div>
          <input type="submit" value="Login" class="button">
          <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
          <p>¿No tienes una cuenta? <a class="nav-item" class="link" href="{% url 'register' %}">Registrate </a>  </p>

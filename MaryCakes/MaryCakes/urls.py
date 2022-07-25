@@ -26,8 +26,8 @@ urlpatterns = [
     path('postre/', core_views.postre, name="postre"),
     path('about/', core_views.about, name="about"),
     path('contact/', core_views.contact, name="contact"),
-    path('register/', register, name="register"),
-    path('login/', CustomLoginView.as_view(template_name = 'user/login.html',authentication_form=loginForm) , name='login'),
+    path('register/', register.as_view(), name="register"),
+    path('login/', CustomLoginView.as_view(redirect_authenticated_user=True, template_name = 'user/login.html',authentication_form=loginForm) , name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='user/logout.html'), name='logout'),
     path('admin/', admin.site.urls),
 ]

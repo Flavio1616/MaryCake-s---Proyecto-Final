@@ -9,28 +9,51 @@
     <span class="subheading">AQUI NUESTRO CATALOGO DE TORTAS</span>
 {% endblock %}
 
+
+    
+    
+
+    
+
+
+
+
+
 {% block content %}
-<div class="container">
-    <!-- Proyecto -->
-    <div class="row project">  	
-    <div class="col-lg-3 col-md-4 offset-lg-1">
-            <img class="img-fluid" src="{% static 'core/img/torta-pg.jpg' %}" alt="">
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/css/catalogo.css' %}">
+<div class="contenedor">
+
+    <div class="catalogo">
+        <img src="{% static 'core/img/torta-vainilla.jpg' %}" alt="Torta">
+        <h2>Torta de Vainilla</h2>
+        <p>Esta receta es ideal para principiantes,
+         además de que se puede decorar o modificar al gusto con distintos sabores.
+         La torta clásica es una torta casera y fácil de preparar, ideal para servir sola,
+         como postre o merienda.</p>
+         <a href="#">Añadir al Carrito</a>
     </div>
-    <div class="col-lg-7 col-md-8">
-        <h2 class="section-heading title">Segundo proyecto</h2>   
-        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm....</p>
+
+    <div class="catalogo">
+        <img src="{% static 'core/img/torta-chocolate.jpg' %}" alt="Torta">
+        <h2>Torta de Chocolate</h2>
+        <p>Esta receta es ideal para principiantes,
+         además de que se puede decorar o modificar al gusto con distintos sabores.
+         La torta clásica es una torta casera y fácil de preparar, ideal para servir sola,
+         como postre o merienda.</p>
+         <a href="#">Añadir al Carrito</a>
     </div>
+
+    <div class="catalogo">
+        <img src="{% static 'core/img/torta-helado.jpg' %}" alt="Torta">
+        <h2>Torta de Helados</h2>
+        <p>Esta receta es ideal para principiantes,
+         además de que se puede decorar o modificar al gusto con distintos sabores.
+         La torta clásica es una torta casera y fácil de preparar, ideal para servir sola,
+         como postre o merienda.</p>
+         <a href="#">Añadir al Carrito</a>
     </div>
-    <!-- Proyecto -->
-    <div class="row project">  	
-    <div class="col-lg-3 col-md-4 offset-lg-1">
-            <img class="img-fluid" src="{% static 'core/img/home-pg.jpg' %}" alt="">
-    </div>
-    <div class="col-lg-7 col-md-8">
-        <h2 class="section-heading title">Primer proyecto</h2>   
-        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm....</p>
-    </div>
-    </div>
-    </div>
+
+</div>
 {% endblock %}
 
