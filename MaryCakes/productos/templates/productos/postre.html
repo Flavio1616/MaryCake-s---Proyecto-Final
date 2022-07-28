@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block title %}POSTRES{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/productos.jpg' %}{% endblock %}
+
+{% block headers %} 
+    <h1>POSTRES</h1>
+    <span class="subheading">Aqui Nuestro Catalogo de Postres</span>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/css/catalogo.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% for postre in postre %}
+
+<div class="row mx-5">
+
+<div class="col">
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" alt="card" src="{{ postre.image.url }}">
+        <div class="card-body">
+            <h2>{{ postre.title }}</h2>
+            <p class="card-text">{{ postre.coste }}</p>
+        <input type="submit" value="Comprar">
+        </div>
+    </div>
+    
+</div>
+  
+</div>
+
+
+
+{% endfor %}
+{% endblock %}

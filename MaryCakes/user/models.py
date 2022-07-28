@@ -9,4 +9,3 @@ class Profile(models.Model):
         return f'Perfil de {self.user.username}'
     
 
-

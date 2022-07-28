@@ -15,12 +15,6 @@ html_base = """
 def home(request):
     return render(request, "core/home.html")
 
-def torta(request):
-    return render(request, "core/torta.html")
-
-def postre(request):
-    return render(request, "core/postre.html")
-
 def about(request):
     return render(request, "core/about.html")
 
