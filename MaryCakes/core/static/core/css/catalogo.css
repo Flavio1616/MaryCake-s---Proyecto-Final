@@ -1,18 +1,30 @@
-*{
-    box-sizing: border-box;
+h1 {
+    font-size: 80px;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Bungee';
 }
 
-.card {
-    transition: all 0.2s ease;
+.text {
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 0px rgb(54, 53, 53);
+    transition: all 0.5s;
+    
 }
 
-.card:hover{
-    transform: translateY(-15px);
-    box-shadow: 0 0 5px rgba(3, 20, 0);
+.col:hover{
+    transform: scale(1.1);
+    color: rgb(248, 99, 99);
 }
 
-.card img {
-    width: 18rem;
+.col img {
+    width: 20rem;
     height: 250px;
     
 }
@@ -32,21 +44,32 @@ p {
     text-align: center;
 }
 
-input {
-    border: none;
-    color: rgb(22, 14, 107);
-    cursor: pointer;
-    transition: all .25s;
+.botons{
+    width: 100%;
+    padding: 10px;
+    background: #4a3ee9;
+    color: #fff;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial;
-    background-color: rgb(204, 205, 171);
-    border-radius: 10px;
-    width: 100px;
-    height: 30px;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 16px 0;
+    border-radius: 20px;
+}
+
+.botons:hover{
+    color: #010b11;
 }
 
 input:hover {
     color: rgb(107, 14, 16);
+}
+
+@media screen and (max-width: 1200px) {
+    .col{
+        flex-direction: column;
+        padding: 15px;
+    }
 }
 
 

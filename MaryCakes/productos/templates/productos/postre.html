@@ -6,33 +6,33 @@
 
 {% block headers %} 
     <h1>POSTRES</h1>
-    <span class="subheading">Aqui Nuestro Catalogo de Postres</span>
+    <span class="text">Aqui Nuestro Catalogo de Postres</span>
 {% endblock %}
 
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'core/css/catalogo.css' %}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-{% for postre in postre %}
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 <div class="row mx-5">
-
+{% for postre in postre %}
 <div class="col">
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" alt="card" src="{{ postre.image.url }}">
-        <div class="card-body">
-            <h2>{{ postre.title }}</h2>
-            <p class="card-text">{{ postre.coste }}</p>
-        <input type="submit" value="Comprar">
-        </div>
+    <div class="card" style="width: 20rem;">
+        <img src="{{ postre.image.url }}" class="card-img-top" alt="card">
+    <div class="card-body">
+        <h2>{{ postre.title }}</h2>
+        <p class="card-text">${{ postre.coste }}</p>
+    <input class="botons" type="submit" name="submit" value="Comprar">
     </div>
-    
+    </div>
+
 </div>
-  
-</div>
-
-
-
 {% endfor %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    
+
+
+
 {% endblock %}
