@@ -20,11 +20,17 @@
 <div class="col">
 
     <div class="card" style="width: 20rem;">
+        <a href="{% url 'postre-detail' postre.slug %}">
         <img src="{{ postre.image.url }}" class="card-img-top" alt="card">
-    <div class="card-body">
-        <h2>{{ postre.title }}</h2>
+        </a>
+        <div class="card-body">
+        <a href="{% url 'postre-detail' postre.slug %}">
+        <h2>{{ postre.title }}</h2> 
+        </a>
         <p class="card-text">${{ postre.coste }}</p>
+    <a href="{% url 'postre-detail' postre.slug %}">
     <input class="botons" type="submit" name="submit" value="Comprar">
+    </a>
     </div>
     </div>
 

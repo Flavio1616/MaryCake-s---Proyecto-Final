@@ -17,6 +17,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 from core import views as core_views
+from productos.views import *
 from productos import views as productos_views
 from user.views import *
 from user.forms import *
@@ -29,6 +30,10 @@ urlpatterns = [
     path('register/', register.as_view(), name="register"),
     path('postre/', productos_views.postre, name="postre"),
     path('torta/', productos_views.torta, name="torta"),
+    path('torta/<slug>/', detailTor.as_view(), name="torta-detail"),
+    path('postre/<slug>/', detailPost.as_view(), name="postre-detail"),
+    path('compra/<slug>/', detailCart.as_view(), name="detailcart"),
+    path('compra2/<slug>/', detailCart2.as_view(), name="detailcart2"),
    path('login/', CustomLoginView.as_view(redirect_authenticated_user=True, template_name = 'user/login.html',authentication_form=loginForm) , name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='user/logout.html'), name='logout'),
     path('admin/', admin.site.urls),
