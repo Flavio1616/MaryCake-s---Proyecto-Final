@@ -1,7 +1,4 @@
-from multiprocessing import context
 from django.shortcuts import HttpResponse, render
-from productos.views import *
-from django.core.paginator import Paginator
 
 html_base = """
     "<h1>MARY CAKES</h1>
@@ -16,17 +13,7 @@ html_base = """
 
 # Create your views here.
 def home(request):
-    torta = Torta.objects.all()
-    postre = Postres.objects.all()
-    context ={
-        'torta':torta,
-        'postre':postre
-    }
-    if torta and postre:
-        paginator = Paginator((torta, postre), 6)
-        page_number = request.GET.get('page')
-        digital_products_data = paginator.get_page(page_number)
-    return render(request, "core/home.html", context)
+    return render(request, "core/home.html")
 
 def about(request):
     return render(request, "core/about.html")

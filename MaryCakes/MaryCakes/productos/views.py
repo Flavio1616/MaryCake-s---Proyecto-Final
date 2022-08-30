@@ -4,23 +4,14 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
 from .models import Torta
 from .models import Postres
-from django.core.paginator import Paginator
 
 # Create your views here.
 def torta(request):
     torta = Torta.objects.all()
-    if torta:
-            paginator = Paginator(torta, 6)
-            page_number = request.GET.get('page')
-            digital_products_data = paginator.get_page(page_number)
     return render(request, "productos/torta.html", {'torta': torta})
 
 def postre(request):
     postre = Postres.objects.all()
-    if postre:
-            paginator = Paginator(postre, 6)
-            page_number = request.GET.get('page')
-            digital_products_data = paginator.get_page(page_number)
     return render(request, "productos/postre.html", {'postre': postre})
 
 class detailTor (View):
